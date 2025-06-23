@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KUCSA - Membership</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #060a06;
+      --secondary-color: #31eb0c;
+      --accent-color: #1a73e8;
+      --gbv-color: #dc3545;
+    }
+    
+    .hero {
+      background: var(--primary-color);
+      color: var(--secondary-color);
+      padding: 80px 0;
+      text-align: center;
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/membership-banner.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .section-title {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: var(--secondary-color);
+      bottom: -10px;
+      left: 25%;
+    }
+    
+    .footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .membership-card {
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+      border: none;
+      height: 100%;
+    }
+    
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .membership-badge {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    
+    .benefit-item {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .benefit-item:before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: var(--secondary-color);
+      position: absolute;
+      left: 0;
+    }
+    
+    .form-section {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+      border-radius: 10px;
+    }
+    
+    .btn-success {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+    
+    .btn-success:hover {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+    
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
+      color: var(--secondary-color) !important;
+      box-shadow: 0 0 10px 2px var(--secondary-color);
+      background-color: rgba(49, 235, 12, 0.1);
+      border-radius: 8px;
+      transition: box-shadow 0.3s, background 0.3s;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      z-index: 999;
+    }
+    
+    .back-to-top:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-start" style="gap: 30px;">
+      <img src="kucsa_logo.png" alt="KUCSA Logo" style="height:150px; width:auto;" class="me-4 d-none d-md-block">
+      <div class="flex-grow-1 text-center text-md-start">
+        <h1 class="display-5 fw-bold">KUCSA Membership</h1>
+        <p class="lead fs-4">"Build More in Unity"</p>
+        <p class="fs-5">Join our community of 3000+ students across Kakamega County institutions</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="kucsa_logo.png" alt="KUCSA Logo" style="height: 40px; width:auto;" class="me-2">
+        KUCSA
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About_us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="leadership.html">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News & Updates</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="membership.html">Membership</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Membership Benefits -->
+  <div class="container my-5">
+    <h2 class="section-title text-center">Why Join KUCSA?</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card membership-card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-users fa-3x mb-3" style="color: var(--accent-color);"></i>
+            <h4 class="card-title">Networking</h4>
+            <p>Connect with students from all tertiary institutions in Kakamega County and beyond.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card membership-card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-graduation-cap fa-3x mb-3" style="color: var(--accent-color);"></i>
+            <h4 class="card-title">Leadership</h4>
+            <p>Develop leadership skills through our training programs and workshops.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card membership-card h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-hands-helping fa-3x mb-3" style="color: var(--accent-color);"></i>
+            <h4 class="card-title">Support</h4>
+            <p>Access to welfare support, mentorship, and emergency assistance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Membership Types -->
+  <div class="container my-5">
+    <h2 class="section-title text-center">Membership Fee</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <div class="card membership-card h-100">
+          <div class="card-body text-center">
+            <h3 class="card-title">Membership for All</h3>
+            <h4 class="my-4">KES 100 <small class="text-muted">/year</small></h4>
+            <p class="mb-0">Open to all students and alumni. Enjoy full KUCSA benefits and community support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container my-5 form-section" id="registration">
+    <h2 class="section-title text-center">Membership Registration</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8LJl0Ho5rlEZHEJao5wKjlkAk7OihUOTriiNFJqEfbnC2lQ/viewform?usp=header" target="_blank" class="btn btn-success btn-lg">
+          <i class="fas fa-user-plus me-2"></i>Join KUCSA Now
+        </a>
+        <div class="mt-3">
+          <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#termsModal">
+            <i class="fas fa-file-contract me-2"></i>Terms & Conditions
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Information -->
+  <div class="container my-5">
+    <h2 class="section-title text-center">Payment Information</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Pay via M-Pesa Only</h4>
+            <p>After submitting your application, pay your membership fee using the details below:</p>
+            <div class="mb-4">
+              <h5><i class="fas fa-mobile-alt me-2"></i> M-Pesa</h5>
+              <div class="input-group mb-2">
+                <span class="input-group-text">Paybill</span>
+                <input type="text" class="form-control" value="522533" readonly>
+                <button class="btn btn-outline-secondary" onclick="copyToClipboard('522533')">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              <div class="input-group">
+                <span class="input-group-text">Account</span>
+                <input type="text" class="form-control" value="7786101" readonly>
+                <button class="btn btn-outline-secondary" onclick="copyToClipboard('7786101')">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="alert alert-info">
+              <i class="fas fa-info-circle me-2"></i> Please use your full name as the payment reference. Membership activation may take 24-48 hours after payment confirmation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container my-5">
+    <h2 class="section-title text-center">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            Who can join KUCSA?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            KUCSA membership is open to all students in tertiary institutions (universities, colleges, polytechnics) within Kakamega County. We also offer associate membership for alumni and supporters outside the county.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            How long does membership last?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Regular membership is valid for one academic year (September-August) and must be renewed annually. Associate membership is also valid for one year from date of registration.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Can I get a refund if I change my mind?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Membership fees are non-refundable once paid. However, if you have extenuating circumstances, you may contact our membership committee for consideration.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            How do I access member benefits?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            After your payment is confirmed, you'll receive a digital membership card via email. Present this card at events to access member benefits. You'll also be added to our members-only communication channels.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Can I upgrade from associate to regular membership?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, if you become a student in Kakamega County, you can upgrade to regular membership by contacting our membership coordinator and paying the difference in fees.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">KUCSA Membership Terms & Conditions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <h6>1. Membership Eligibility</h6>
+          <p>Membership is open to all bona fide students in tertiary institutions within Kakamega County and alumni/supporters. By joining, you agree to abide by KUCSA's constitution and code of conduct.</p>
+          <h6 class="mt-3">2. Code of Conduct</h6>
+          <p>All members must uphold respect, unity, and positive engagement with fellow members and the community. Any form of discrimination, harassment, or misconduct is strictly prohibited.</p>
+          <h6 class="mt-3">3. Membership Fees</h6>
+          <p>Membership fees are KES 100 per year, non-refundable, and must be paid via M-Pesa (Paybill: 522533, Account: 7786101). Membership is valid for one year and must be renewed annually.</p>
+          <h6 class="mt-3">4. Data Protection</h6>
+          <p>KUCSA will protect your personal information in accordance with data protection laws. Your information will only be used for official KUCSA communications and will not be shared with third parties without your consent.</p>
+          <h6 class="mt-3">5. Termination of Membership</h6>
+          <p>KUCSA reserves the right to terminate membership for violations of the code of conduct or actions that bring the organization into disrepute. No refund will be issued upon termination.</p>
+          <h6 class="mt-3">6. Amendments</h6>
+          <p>KUCSA may update these terms and conditions from time to time. Members will be notified of any significant changes via email or official communication channels.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">I Understand</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0 text-center text-md-start">
+          <img src="kucsa_logo.png" alt="KUCSA Logo" style="height: 60px; width:auto;" class="mb-3">
+          <p>"Build More in Unity"</p>
+          <div class="mt-3">
+            <a href="https://www.facebook.com/profile.php?id=61551987487506&mibextid=ZbWKwL" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/Sindani_Joseph?t=QbhmwtBS-9RzfWC1Yi-j3Q&s=09" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://whatsapp.com/channel/0029Va9QwL4JP21Bo0gqpM3o" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://vm.tiktok.com/ZMSU6F7E8/" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0 text-center">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="events.html" class="text-white">Events</a></li>
+            <li><a href="gallery.html" class="text-white">Gallery</a></li>
+            <li><a href="membership.html" class="text-white">Membership</a></li>
+            <li><a href="contacts.html" class="text-white">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <h5>Contact Information</h5>
+          <p>Kakamega Town, Kenya</p>
+          <p>Email: membership@kucsa.org</p>
+          <p>Phone: +254 712 345 678</p>
+          <p>Office Hours: Mon-Fri, 9am-5pm</p>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p>&copy; 2025 KUCSA. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p>Office of the President - Kakamega Universities and Colleges Students Association</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to top button
+    window.addEventListener('scroll', function() {
+      var backToTop = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    
+    document.getElementById('backToTop').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    
+    // Copy to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Copied to clipboard: ' + text);
+      }, function() {
+        alert('Failed to copy text');
+      });
+    }
+  </script>
+</body>
+</html>
